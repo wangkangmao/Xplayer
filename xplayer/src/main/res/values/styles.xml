@@ -1,0 +1,7 @@
+<resources>
+    <!--悬浮窗显示动画-->
+    <style name="WindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/window_in</item>
+        <item name="android:windowExitAnimation">@anim/window_out</item>
+    </style>
+</resources>

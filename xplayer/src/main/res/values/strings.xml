@@ -1,0 +1,27 @@
+<resources>
+    <string name="player_window_permission">Not stating and obtain suspension window permission</string>
+    <string name="player_locker_flase">Unlocked</string>
+    <string name="player_locker_true">Locked</string>
+    <string name="player_core_name">Decoder core:</string>
+    <string name="player_render_name">Render core:</string>
+    <string name="player_media_completion">Play complete</string>
+    <string name="player_media_start">First frame rendering</string>
+    <string name="player_media_buffer_start">Buffer start</string>
+    <string name="player_media_buffer_end">Buffer end</string>
+    <string name="player_media_seek">Fast forward and fast rewind to resume playing</string>
+    <string name="player_media_error_timeout">Playback failed, link timeout</string>
+    <string name="player_media_error_file_invalid">Playback failed, unsupported video file format</string>
+    <string name="player_media_error_dns">Failed to play, failed to link DNS</string>
+    <string name="player_media_error_path_invalid">Playback failed, please check the validity of the video file address</string>
+    <string name="player_media_error_core">Video decoding failed</string>
+    <string name="player_media_error_path_empty">Play address is empty, please check!</string>
+    <string name="player_media_error_net">Network not connected</string>
+    <string name="player_media_mobile">Mobile network playback</string>
+    <string name="player_media_reday">Preparing to play</string>
+    <string name="player_media_play_error">Playback failed,Error:</string>
+    <string name="player_media_resume">Resume playback</string>
+    <string name="player_media_pause">Pause playback</string>
+    <string name="player_media_stop">Stop playing</string>
+    <string name="player_media_reset">End playback and reset</string>
+    <string name="player_media_destroy">Player destruction</string>
+</resources>
