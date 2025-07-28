@@ -4,7 +4,7 @@
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-Android-green)
-![License](https://img.shields.io/badge/license-MIT-blue)
+![License](https://img.shields.io/badge/license-MIT-blue)、
 ![Kotlin](https://img.shields.io/badge/kotlin-1.9.0-purple)
 
 ## ✨ 特性亮点
@@ -41,16 +41,6 @@
       <img src="screenshots/smart_player.png" width="200px" alt="智能播放器"/>
       <br/>
       <b>AI智能播放器</b>
-    </td>
-    <td align="center">
-      <img src="screenshots/video_library.png" width="200px" alt="视频库"/>
-      <br/>
-      <b>视频选择库</b>
-    </td>
-    <td align="center">
-      <img src="screenshots/player_view.png" width="200px" alt="播放界面"/>
-      <br/>
-      <b>播放界面</b>
     </td>
   </tr>
 </table>
