@@ -1,15 +1,18 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    namespace 'com.wangkm.player'
+    compileSdk 34
+    buildToolsVersion "34.0.0"
 
     defaultConfig {
         applicationId "com.wangkm.player"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode rootProject.ext.sdk.versionCode
         versionName rootProject.ext.sdk.versionName
         multiDexEnabled true
@@ -42,35 +45,69 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
+    }
+    
+    buildFeatures {
+        compose true
+        viewBinding true
+        buildConfig true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"  // 兼容Kotlin 1.9.0
     }
 }
 
 configurations.all {
     resolutionStrategy {
-        force 'androidx.core:core:1.7.0'//强制
+        force 'androidx.core:core:1.13.1'//强制使用最新版本
     }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    
+    // 基础Android库
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.activity:activity-ktx:1.9.3'
+    implementation 'androidx.fragment:fragment-ktx:1.8.5'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    
+    // Jetpack Compose BOM - 统一管理Compose版本
+    implementation platform('androidx.compose:compose-bom:2024.12.01')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.activity:activity-compose:1.9.3'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7'
+    
+    // AI和机器学习 (暂时简化，避免依赖冲突)
+    implementation 'org.tensorflow:tensorflow-lite:2.13.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.13.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.3'
+    
+    // 网络库
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
+    // 图像处理
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
 
-    //Glide4.x图片加载
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    //弹幕
+    //弹幕 (保留原有功能)
     implementation  'com.github.ctiao:DanmakuFlameMaster:0.9.25'
     implementation  'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
-    //网络数据
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
+    //JSON解析
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     //播放器SDK
 //    implementation 'com.github.hty527.iPlayer:iplayer:2.1.26'
@@ -99,8 +136,8 @@ dependencies {
     //implementation 'com.google.android.exoplayer:exoplayer-core:2.18.1'//核心功能（必需）
     //implementation "com.google.android.exoplayer:extension-rtmp:2.18.1"//rtmp直播流解码协议//（必需）
     //exo音视频解码器，以下为可选依赖，请根据需要实现
-    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.1'//支持DASH内容
-    implementation "com.google.android.exoplayer:exoplayer-hls:2.18.1"//支持HLS内容
-    implementation "com.google.android.exoplayer:exoplayer-rtsp:2.18.1"
-    implementation "androidx.constraintlayout:constraintlayout:2.0.1"
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.19.1'//支持DASH内容
+    implementation "com.google.android.exoplayer:exoplayer-hls:2.19.1"//支持HLS内容
+    implementation "com.google.android.exoplayer:exoplayer-rtsp:2.19.1"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.0"
 }

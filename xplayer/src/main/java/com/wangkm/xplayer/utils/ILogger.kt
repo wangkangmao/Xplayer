@@ -1,7 +1,6 @@
 package com.wangkm.xplayer.utils
 
 import android.util.Log
-import ccom.wangkm.xplayer.BuildConfig
 
 
 /**
@@ -16,7 +15,7 @@ object ILogger {
     }
 
     val version: String
-        get() = BuildConfig.VERSION_NAME
+        get() = "1.0.0" // 直接返回版本号，避免BuildConfig引用
 
     fun pd(TAG: String?, message: String?) {
         if (DEBUG) {

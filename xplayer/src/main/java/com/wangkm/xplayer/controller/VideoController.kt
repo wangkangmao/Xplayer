@@ -7,7 +7,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.Toast
-import ccom.wangkm.xplayer.R
+import com.wangkm.xplayer.R
 import com.wangkm.xplayer.model.PlayerState
 import com.wangkm.xplayer.utils.AnimationUtils
 import com.wangkm.xplayer.utils.PlayerUtils
@@ -100,6 +100,7 @@ class VideoController(context: Context?) : GestureController(context) {
             }
 
             PlayerState.STATE_DESTROY -> onDestroy()
+            null -> {} // 处理null情况
         }
     }
 

@@ -10,7 +10,7 @@ import android.view.ViewConfiguration
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
-import ccom.wangkm.xplayer.R
+import com.wangkm.xplayer.R
 import com.wangkm.xplayer.base.BasePlayer
 import com.wangkm.xplayer.listener.OnWindowActionListener
 import com.wangkm.xplayer.utils.PlayerUtils

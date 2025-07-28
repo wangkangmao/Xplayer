@@ -167,16 +167,13 @@ public class SdkDefaultFuncation extends LinearLayout implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if((int)view.getTag()==MEDIA_CORE) return;
-        switch (view.getId()) {
-            case R.id.btn_core_1:
-                MEDIA_CORE =0;
-                break;
-            case R.id.btn_core_2:
-                MEDIA_CORE =1;
-                break;
-            case R.id.btn_core_3:
-                MEDIA_CORE =2;
-                break;
+        int id = view.getId();
+        if (id == R.id.btn_core_1) {
+            MEDIA_CORE = 0;
+        } else if (id == R.id.btn_core_2) {
+            MEDIA_CORE = 1;
+        } else if (id == R.id.btn_core_3) {
+            MEDIA_CORE = 2;
         }
         for (View button : buttons) {
             button.setSelected(false);

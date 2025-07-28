@@ -58,34 +58,31 @@ public class CorePlayerView extends LinearLayout {
         OnClickListener onClickListener = new OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.view_core_1:
-                        if(0!=mCurrentMediaCore){
-                            findViewById(R.id.view_core_1).setSelected(true);
-                            findViewById(R.id.view_core_2).setSelected(false);
-                            findViewById(R.id.view_core_3).setSelected(false);
-                            mCurrentMediaCore = 0;
-                            rePlay();
-                        }
-                        break;
-                    case R.id.view_core_2:
-                        if(1!=mCurrentMediaCore){
-                            findViewById(R.id.view_core_1).setSelected(false);
-                            findViewById(R.id.view_core_2).setSelected(true);
-                            findViewById(R.id.view_core_3).setSelected(false);
-                            mCurrentMediaCore = 1;
-                            rePlay();
-                        }
-                        break;
-                    case R.id.view_core_3:
-                        if(2!=mCurrentMediaCore){
-                            findViewById(R.id.view_core_1).setSelected(false);
-                            findViewById(R.id.view_core_2).setSelected(false);
-                            findViewById(R.id.view_core_3).setSelected(true);
-                            mCurrentMediaCore = 2;
-                            rePlay();
-                        }
-                        break;
+                int id = view.getId();
+                if (id == R.id.view_core_1) {
+                    if(0!=mCurrentMediaCore){
+                        findViewById(R.id.view_core_1).setSelected(true);
+                        findViewById(R.id.view_core_2).setSelected(false);
+                        findViewById(R.id.view_core_3).setSelected(false);
+                        mCurrentMediaCore = 0;
+                        rePlay();
+                    }
+                } else if (id == R.id.view_core_2) {
+                    if(1!=mCurrentMediaCore){
+                        findViewById(R.id.view_core_1).setSelected(false);
+                        findViewById(R.id.view_core_2).setSelected(true);
+                        findViewById(R.id.view_core_3).setSelected(false);
+                        mCurrentMediaCore = 1;
+                        rePlay();
+                    }
+                } else if (id == R.id.view_core_3) {
+                    if(2!=mCurrentMediaCore){
+                        findViewById(R.id.view_core_1).setSelected(false);
+                        findViewById(R.id.view_core_2).setSelected(false);
+                        findViewById(R.id.view_core_3).setSelected(true);
+                        mCurrentMediaCore = 2;
+                        rePlay();
+                    }
                 }
 
             }

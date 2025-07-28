@@ -139,7 +139,7 @@ abstract class GestureController(context: Context?) : BaseController(context), O
             return true
         }
 
-        override fun onScroll(e1: MotionEvent, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
+        override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
 //            boolean edge1 = PlayerUtils.getInstance().isEdge(getParentContext(), e1);
 //            boolean edge2 = PlayerUtils.getInstance().isEdge(getParentContext(), e2);
 //        ILogger.d(TAG,"onScroll-->IsGestureEnabled:"+mIsGestureEnabled+",mCanSlide:"+mCanSlide+",mFirstTouch:"+mFirstTouch);
@@ -147,11 +147,12 @@ abstract class GestureController(context: Context?) : BaseController(context), O
                 || !mIsGestureEnabled //关闭了手势
                 || !mCanSlide //关闭了滑动手势
                 || isLocked //锁住了屏幕
-                || PlayerUtils.isEdge(parentContext!!, e1)
+                || (e1 != null && PlayerUtils.isEdge(parentContext!!, e1))
             ) { // //处于屏幕边沿
                 return true
             }
-            val deltaX = e1!!.x - e2.x
+            if (e1 == null) return true
+            val deltaX = e1.x - e2.x
             val deltaY = e1.y - e2.y
             //手指按下首次处理,通知UI交互组件处理手势按下事件
             if (mFirstTouch) {

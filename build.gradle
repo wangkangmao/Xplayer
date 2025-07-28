@@ -3,7 +3,7 @@ apply from: "config.gradle"
 
 buildscript {
 
-    ext.kotlin_version = "1.5.31"
+    ext.kotlin_version = "1.9.0"
     ext.anko_version = '0.10.2'
 
     repositories {
@@ -12,9 +12,10 @@ buildscript {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        google()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath "com.android.tools.build:gradle:8.6.0"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -28,6 +29,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        google()
     }
     //编译时报注释GBK编码错误解决
     tasks.withType(Javadoc) {
@@ -49,7 +51,7 @@ subprojects {
     project.configurations.all {
         resolutionStrategy.eachDependency {
             details -> if (details.requested.group == 'androidx.core' && !details.requested.name.contains('androidx'))
-            { details.useVersion "1.6.0" }
+            { details.useVersion "1.13.1" }
         }
     }
 }

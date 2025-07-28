@@ -38,7 +38,7 @@ import com.wangkm.xplayer.widget.view.WindowPlayerFloatView;
 
 import java.io.File;
 
-import ccom.wangkm.xplayer.R;
+import com.wangkm.xplayer.R;
 
 /**
  * Created by wangkm

@@ -1,20 +1,31 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    namespace 'com.wangkm.xplayer'
+    compileSdk 34
+    buildToolsVersion "34.0.0"
 
     defaultConfig {
-        minSdkVersion 16
-        //noinspection ExpiredTargetSdkVersion
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode rootProject.ext.sdk.versionCode
         versionName rootProject.ext.sdk.versionName
     }
-    lintOptions {
+    lint {
         abortOnError false
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 

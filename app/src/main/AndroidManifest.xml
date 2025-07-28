@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.wangkm.player">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!--播放网络视频需要声明此权限-->
+    <!-- 基础网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--如您的播放器需要支持移动网路提示用户的交互,需要申明此权限,SDK用来检测网络状态-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--如您的播放器需要支持全局悬浮窗窗口播放请申明此权限-->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    
+    <!-- 存储权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    
+    <!-- 音频权限(AI语音识别) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    
+    <!-- 摄像头权限 (视频创作功能) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    
+    <!-- 前台服务权限 (后台播放) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    
+    <!-- 硬件特性声明 -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -23,14 +43,52 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Xplayer"
         tools:targetApi="31">
+        <!-- 主启动Activity -->
         <activity
-            android:name=".ui.activity.VideoPlayerActivity"
-            android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Xplayer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- 演示入口Activity -->
+        <activity
+            android:name=".demo.VideoPlayerDemoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer" />
+            
+        <activity
+            android:name=".demo.BasicPlayerDemoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer" />
+            
+        <activity
+            android:name=".demo.PlayerSettingsDemoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer" />
+            
+        <activity
+            android:name=".demo.PerformanceTestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer" />
+        
+        <!-- 原有播放器Activity -->
+        <activity
+            android:name=".ui.activity.VideoPlayerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer">
+        </activity>
+        
+        <!-- AI智能播放器Activity -->
+        <activity
+            android:name=".ui.activity.SmartVideoPlayerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Xplayer"
+            android:screenOrientation="unspecified"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
     </application>
 

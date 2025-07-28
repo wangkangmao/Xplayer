@@ -6,7 +6,7 @@ import android.os.Build
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.WindowManager
-import ccom.wangkm.xplayer.R
+import com.wangkm.xplayer.R
 import com.wangkm.xplayer.base.BasePlayer
 import com.wangkm.xplayer.listener.OnWindowActionListener
 import com.wangkm.xplayer.utils.ILogger

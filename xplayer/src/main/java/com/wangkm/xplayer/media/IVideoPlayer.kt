@@ -5,7 +5,7 @@ import android.content.res.AssetFileDescriptor
 import android.text.TextUtils
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import ccom.wangkm.xplayer.R
+import com.wangkm.xplayer.R
 import com.wangkm.xplayer.base.AbstractMediaPlayer
 import com.wangkm.xplayer.base.BasePlayer
 import com.wangkm.xplayer.interfaces.IBasePlayer

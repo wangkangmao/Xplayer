@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="window_newbie" type="id"/>
+    <item name="btn_core_1" type="id"/>
+    <item name="btn_core_2" type="id"/>
+    <item name="btn_core_3" type="id"/>
+    <item name="view_core_1" type="id"/>
+    <item name="view_core_2" type="id"/>
+    <item name="view_core_3" type="id"/>
 </resources>
