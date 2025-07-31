@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gradlew.bat clean:*)",
+      "Bash(gradlew:*)",
+      "Bash(./gradlew:*)",
+      "Bash(export JAVA_HOME=\"C:\\soft\\openlogic-openjdk-17.0.14+7-windows-x64\")",
+      "Bash(set JAVA_HOME=C:softopenlogic-openjdk-17.0.14+7-windows-x64)",
+      "Bash(.gradlew.bat assembleDebug)",
+      "Bash(cmd /c:*)",
+      "Bash(java:*)",
+      "Bash(export:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir \"D:\\code\\android\\opensource\\Xplayer\\.ai-rules\")",
+      "Bash(mkdir:*)",
+      "Bash(ls -la .ai-rules/)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}
