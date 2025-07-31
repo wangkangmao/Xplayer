@@ -15,7 +15,8 @@
       "Bash(mkdir:*)",
       "Bash(ls -la .ai-rules/)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 添加AI代码助手项目指导文件\n\n- 新增.ai-rules/目录包含完整的项目开发规范\n- 包含产品定位、技术架构、代码规范等8个指导文件\n- 为AI代码助手提供项目上下文和开发约束\n- 添加Claude AI配置文件以优化代码生成质量\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 添加AI代码助手项目指导文件\n\n- 新增.ai-rules/目录包含完整的项目开发规范\n- 包含产品定位、技术架构、代码规范等8个指导文件\n- 为AI代码助手提供项目上下文和开发约束\n- 添加Claude AI配置文件以优化代码生成质量\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
