@@ -88,7 +88,9 @@
             android:exported="false"
             android:theme="@style/Theme.Xplayer"
             android:screenOrientation="unspecified"
-            android:configChanges="orientation|screenSize|keyboardHidden">
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTop">
         </activity>
     </application>
 
